@@ -1,4 +1,4 @@
-# 13-dars
+# Vue Project
 
 ## Project setup
 ```
