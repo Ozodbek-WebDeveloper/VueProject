@@ -1,0 +1,181 @@
+@import '../components/_mixins.scss';
+@import '../components/_vars.scss';
+
+.header{
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    .navbar{
+        padding: 43px;
+
+        .container{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            .menu{
+                display: flex;
+                align-items: center;
+                gap: 40px;
+
+                .menu-item{
+                    .link{
+                        color: $white;
+                        font-size: 14px;
+                    }
+                }
+            }
+
+            .logo{
+                width: 216px;
+                display: flex;
+                align-self: center;
+                position: absolute;
+                left: 50%;
+                transform: translateX(-50%);
+                width: 216px;
+
+                .logo-image{
+                    width: 100%;
+                }
+                @include lg{
+                    width: 100px;
+                    position: relative;
+                    left: 0;
+                    transform: translateX(0);
+                    z-index: 9999;
+                }
+                &.active{
+                    filter: invert(80%);
+                }
+            }
+            
+            .action{
+                display: flex;
+                align-items: center;
+                gap: 30px;
+                font-size: 14px;
+                color: $white;
+
+                .search-bar{
+                    display: flex;
+                    align-items: center;
+                    gap: 16px;
+                    cursor: pointer;
+ 
+                }
+
+                .auth{
+                    span{
+                        cursor: pointer;
+                    }
+                }
+
+                .act{
+                    display: flex;
+                    align-items: center;
+                    gap: 16px;
+                    
+                    i{
+                        cursor: pointer;
+                    }
+                }
+            }
+            // ----  Media
+
+            .burger-menu{
+                width: 250px;
+                min-height: 100vh;
+                background: $white;
+                position: absolute;
+                top: 0;
+                left: 0;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                padding: 30px;
+                transition: 0.5s;
+                transform: translateX(-101%);
+                z-index: 15;
+
+                &.active{
+                    transform: translateX(0);
+                }
+
+                .burger-box{
+                    display: flex;
+                    flex-direction: column;
+                    gap: 40px;
+                    margin-top: 100px;
+
+                    .burger-item{
+
+                        .burger-link{
+                            color: $black;
+                        }
+                    }
+                }
+                // 
+
+                .burger-title{
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    gap: 10px;
+
+                    .burger-search_bar{
+                        display: flex;
+                        align-items: center;
+                        gap: 10px;
+                        padding: 10px;
+                        border: 1px solid $black;
+                        border-radius: 50px;
+
+                        i{
+                            cursor: pointer;
+                        }
+
+                        input{
+                            width: 100%;
+                            border: none;
+                            outline: none;
+                        }
+                    }
+                    //
+                    .burger-act{
+                        display: flex;
+                        align-items: center;
+                        gap: 20px;
+                    }
+                }
+            }
+
+            .burger{
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                gap: 20px;
+
+                .login{
+                    i{
+                        color: $white;
+                    }
+                }
+                .bur-menu{
+                    width: 30px;
+                    height: 30px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    border: 1px solid $white;
+                    border-radius: 5px;
+                    i{
+                        color: $white;
+                    }
+                }
+            }
+        }
+    }
+}

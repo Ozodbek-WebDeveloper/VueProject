@@ -1,30 +1,31 @@
 <template>
-  <nav>
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
-  </nav>
+
   <router-view/>
+
+  <Navbar @isActive="SearchBarActive = true" />
+  <Search-bar :isActive="SearchBarActive" />
+
+
 </template>
 
+
+<script>
+import Navbar from "./layouts/navbar.vue";
+import SearchBar from "./layouts/search-bar.vue";
+import Home from "./views/home/index.vue";
+export default {
+  components: { Home, Navbar, SearchBar },
+
+  data() {
+    return {
+      SearchBarActive: false,
+    };
+  },
+};
+</script>
+
+
+
 <style lang="scss">
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
-
-nav {
-  padding: 30px;
-
-  a {
-    font-weight: bold;
-    color: #2c3e50;
-
-    &.router-link-exact-active {
-      color: #42b983;
-    }
-  }
-}
+@import "./assets/styles/main.scss";
 </style>
